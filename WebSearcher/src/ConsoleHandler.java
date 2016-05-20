@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import jline.ConsoleReader;
 
@@ -47,5 +49,18 @@ public class ConsoleHandler {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public String readString(){
+		String input = "";
+		try{
+			BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+			input = bufferRead.readLine();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		return input;
 	}
 }
